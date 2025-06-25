@@ -9,7 +9,7 @@ services:
       POSTGRES_DB: sgre
       PGDATA: /var/lib/postgresql/data/pgdata
     volumes:
-      - ~/docker_data/db/data:/var/lib/postgresql/data
+      - ${DATA_DIR}/db/data:/var/lib/postgresql/data
 
   sgre-pgadmin4:
     image: dpage/pgadmin4:9
@@ -22,4 +22,4 @@ services:
     ports:
     - "127.0.0.1:5050:5050"
     volumes:
-    - ~/docker_data/pgadmin/pgadmin:/var/lib/pgadmin
+    - ${DATA_DIR}/pgadmin/pgadmin:/var/lib/pgadmin
